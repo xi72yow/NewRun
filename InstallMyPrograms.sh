@@ -18,20 +18,20 @@ sudo apt install ./VS_Code_amd64.deb -y
 #Github Desktop "Not Official" 
 get_URL_from_latest_release_for_deb() {
     local resultURLs=$(curl "https://api.github.com/repos/$1/releases" | # Get release from GitHub api
-        jq '[.[].assets] | .[0]')                                        # Get download URL
+        jq '[.[].assets] | .[0]')                                        
 
     for variable in $resultURLs; do
         if [[ $variable == *".deb"* ]]; then
-            if [[ $variable == *"https:"* ]]; then
-                url="$((${#variable} - 1))"
-                echo $variable | cut -c2-$url
+            if [[ $variable == *"https:"* ]]; then # Get download URL
+                urlSize="$((${#variable} - 1))" 
+                echo $variable | cut -c2-$urlSize # Delete the ""
             fi
         fi
     done
 }
 
-func_result=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
-curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $func_result
+download_URL=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
+curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $download_URL
 sudo apt install ./Github_Desktop_amd64.deb -y
 
 #Chrome
