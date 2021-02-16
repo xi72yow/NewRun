@@ -3,46 +3,67 @@
 
 sudo add-apt-repository multiverse
 sudo add-apt-repository universe
-sudo -i
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install curl
+sudo apt update
+sudo apt upgrade
+sudo apt install curl jq -y
 
 #Steam
-sudo apt install steam
+sudo apt install steam -y
 
 #VSCode
 curl --location --output VS_Code_amd64.deb --write-out "%{url_effective}\n" "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-sudo apt install ./code_latest_amd64.deb
+sudo apt install ./VS_Code_amd64.deb -y
 
-#Github Desktop (Not Official)
-wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc >/dev/null
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-sudo apt-get update
-sudo apt install github-desktop
+#Github Desktop "Not Official" 
+get_URL_from_latest_release_for_deb() {
+    local resultURLs=$(curl "https://api.github.com/repos/$1/releases" | # Get release from GitHub api
+        jq '[.[].assets] | .[0]')                                        # Get download URL
+
+    for variable in $resultURLs; do
+        if [[ $variable == *".deb"* ]]; then
+            if [[ $variable == *"https:"* ]]; then
+                url="$((${#variable} - 1))"
+                echo $variable | cut -c2-$url
+            fi
+        fi
+    done
+}
+
+func_result=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
+curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $func_result
+sudo apt install ./Github_Desktop_amd64.deb -y
 
 #Chrome
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output Chrome_amd64.deb
-sudo apt install ./Chrome_amd64.deb
+sudo apt install ./Chrome_amd64.deb -y
 
 #Discord
 curl --location --output Discord_amd64.deb --write-out "%{url_effective}\n" "https://discordapp.com/api/download?platform=linux&format=deb"
-sudo apt install ./Discord_amd64.deb
+sudo apt install ./Discord_amd64.deb -y
 
 #CKB-Next Keyboard/Mouse setup
-sudo apt install build-essential cmake libudev-dev qt5-default zlib1g-dev libpulse-dev libquazip5-dev libqt5x11extras5-dev libxcb-screensaver0-dev libxcb-ewmh-dev libxcb1-dev qttools5-dev git libdbusmenu-qt5-dev
+sudo apt install build-essential cmake libudev-dev qt5-default zlib1g-dev libpulse-dev libquazip5-dev libqt5x11extras5-dev libxcb-screensaver0-dev libxcb-ewmh-dev libxcb1-dev qttools5-dev git libdbusmenu-qt5-dev -y
 
+#Audio
+#Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
+sudo apt install alsamixer sox mplayer -y
+#ffmpeg Example: Audio: ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 320k output.mp3 Video: ffmpeg -i myvideo.mp4 -b:a 320k output.mp3
+sudo apt install ffmpeg -y
 #freac CD Ripper
-sudo apt-get install libfdk-aac1
+sudo apt install libfdk-aac1 -y
 #sudo apt-get install libfdk-aac2 #ab20.10
 
-sudo apt-get install openshot-qt lmms flameshot mumble audacity birdfont filezilla obs-studio inkscape -y
-sudo apt-get install octave octave-doc gnuplot 
+#Multimedia
+sudo apt install openshot-qt lmms flameshot mumble birdfont filezilla obs-studio inkscape -y
 
-#Insync
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
-cd /etc/apt/sources.list.d/
-printf 'deb http://apt.insync.io/ubuntu Focal Fossa non-free contrib' > insync.list #maybe FocalFosse together??
-sudo apt-get update
-sudo apt-get install insync
+#Insync Install Not sure that is in every case the newest Version
+curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.3.6.40933-focal_amd64.deb --output Incync_amd64.deb
+sudo apt install ./Incync_amd64.deb -y
+
+#Insync do not work LEL
+##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
+##cd /etc/apt/sources.list.d/
+##printf 'deb http://apt.insync.io/ubuntu Focal Fossa non-free contrib' >insync.list #maybe FocalFosse together??
+##sudo apt-get update
+##sudo apt-get install insync
