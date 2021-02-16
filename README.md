@@ -8,3 +8,4 @@ make PopOS ready after new install
   - Install my Gnome Extension(s) 
   - Set Desktop-Background Picture
   - Auto updates
+  - GUI with Zenity
