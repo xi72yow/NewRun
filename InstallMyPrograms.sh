@@ -1,6 +1,12 @@
 #!/bin/bash
 #chmod +x make script
 
+#For Vanilla Ubuntu/Server Version
+sudo apt-get install zenity 
+sudo add-apt-repository ppa:gnome3-team/gnome3
+sudo apt-get update && sudo apt-get install gnome-shell ubuntu-gnome-desktop
+####
+
 sudo add-apt-repository multiverse
 sudo add-apt-repository universe
 
@@ -9,7 +15,8 @@ sudo apt upgrade
 sudo apt install curl jq -y
 
 #Steam
-sudo apt install steam -y
+curl --location --output Steam_amd64.deb --write-out "%{url_effective}\n" "https://repo.steampowered.com/steam/archive/stable/steam_latest.deb"
+sudo apt install ./Steam_amd64.deb -y
 
 #VSCode
 curl --location --output VS_Code_amd64.deb --write-out "%{url_effective}\n" "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
