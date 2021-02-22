@@ -9,3 +9,4 @@ make PopOS ready after new install
   - Set Desktop-Background Picture
   - Auto updates
   - GUI with Zenity
+  - specials for other Distros
