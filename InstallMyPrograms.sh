@@ -9,6 +9,7 @@ sudo apt-get update && sudo apt-get install gnome-shell ubuntu-gnome-desktop
 
 sudo add-apt-repository multiverse
 sudo add-apt-repository universe
+sudo add-apt-repository ppa:tatokis/ckb-next
 
 sudo apt update
 sudo apt upgrade
@@ -50,7 +51,7 @@ curl --location --output Discord_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Discord_amd64.deb -y
 
 #CKB-Next Keyboard/Mouse setup
-sudo apt install build-essential cmake libudev-dev qt5-default zlib1g-dev libpulse-dev libquazip5-dev libqt5x11extras5-dev libxcb-screensaver0-dev libxcb-ewmh-dev libxcb1-dev qttools5-dev git libdbusmenu-qt5-dev -y
+sudo apt install ckb-next
 
 #Audio
 #Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
