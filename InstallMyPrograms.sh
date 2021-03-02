@@ -72,6 +72,7 @@ sudo apt install ./Incync_amd64.deb -y
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
 gsettings set org.gnome.desktop.interface clock-format "24h"
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
 #Insync do not work LEL
 ##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
