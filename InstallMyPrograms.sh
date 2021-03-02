@@ -69,8 +69,9 @@ sudo apt install openshot-qt lmms flameshot mumble birdfont filezilla obs-studio
 curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.3.6.40933-focal_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
 
-#Set Background
+#Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
+gsettings set org.gnome.desktop.interface clock-format "24h"
 
 #Insync do not work LEL
 ##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
