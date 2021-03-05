@@ -15,7 +15,7 @@ sudo apt update
 sudo apt upgrade
 
 #dependencies
-sudo apt install curl jq -y
+sudo apt install curl jq wget unzip sed -y
 
 #Steam
 curl --location --output Steam_amd64.deb --write-out "%{url_effective}\n" "https://repo.steampowered.com/steam/archive/stable/steam_latest.deb"
