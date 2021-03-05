@@ -13,6 +13,8 @@ sudo add-apt-repository ppa:tatokis/ckb-next
 
 sudo apt update
 sudo apt upgrade
+
+#dependencies
 sudo apt install curl jq -y
 
 #Steam
@@ -68,6 +70,10 @@ sudo apt install openshot-qt lmms flameshot mumble birdfont filezilla obs-studio
 #Insync Install Not sure that is in every case the newest Version
 curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.3.6.40933-focal_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
+
+#Prepros
+curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "https://prepros.io/downloads/stable/linux"
+sudo apt install ./Prepros_amd64.deb -y
 
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
