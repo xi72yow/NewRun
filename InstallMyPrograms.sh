@@ -80,8 +80,9 @@ gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.
 gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
-#VM
+#VM Example: sudo kvm -m 5G -hdb /dev/sdb
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
+
 #Insync do not work LEL
 ##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
 ##cd /etc/apt/sources.list.d/
