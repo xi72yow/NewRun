@@ -75,6 +75,9 @@ sudo apt install ./Incync_amd64.deb -y
 curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "https://prepros.io/downloads/stable/linux"
 sudo apt install ./Prepros_amd64.deb -y
 
+#Latex
+sudo apt install texlive-base -y 
+
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
 gsettings set org.gnome.desktop.interface clock-format "24h"
