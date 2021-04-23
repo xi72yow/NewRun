@@ -1,12 +1,6 @@
 #!/bin/bash
 #chmod +x make script
 
-#For Vanilla Ubuntu/Server Version
-sudo apt-get install zenity 
-sudo add-apt-repository ppa:gnome3-team/gnome3
-sudo apt-get update && sudo apt-get install gnome-shell ubuntu-gnome-desktop
-####
-
 sudo add-apt-repository multiverse
 sudo add-apt-repository universe
 sudo add-apt-repository ppa:tatokis/ckb-next
@@ -87,7 +81,21 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
 
 #Microrechnerentwurf
-sudo apt install gcc git wget make libncurses-dev flex bison gperf python python3-serial -y
+sudo apt install gcc git wget make libncurses-dev flex bison gperf python3 python3-serial -y
+
+##ESP Toolchain
+mkdir -p ~/esp
+cd ~/esp
+tar -xzf ~/Downloads/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz
+
+sudo echo "alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'" >> ~/.bash_aliases
+
+sudo usermod -a -G dialout $USER
+sudo chmod -R 777 /dev/ttyUSB0
+
+#ESP8266_RTOS_SDK
+git clone --recursive https://github.com/espressif/ESP8266_RTOS_SDK.git
+pip3 install -r ~/requirements.txt
 
 #Meshlab
 
