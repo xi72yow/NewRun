@@ -87,7 +87,9 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
 
 #Microrechnerentwurf
-sudo apt install gcc git wget make libncurses-dev flex bison gperf python python-serial -y
+sudo apt install gcc git wget make libncurses-dev flex bison gperf python python3-serial -y
+
+#Meshlab
 
 #Insync do not work LEL
 ##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
