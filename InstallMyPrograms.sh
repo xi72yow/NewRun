@@ -86,6 +86,9 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 #VM Example: sudo kvm -m 5G -hdb /dev/sdb
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
 
+#Microrechnerentwurf
+sudo apt install gcc git wget make libncurses-dev flex bison gperf python python-serial -y
+
 #Insync do not work LEL
 ##apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys ACCAF35C
 ##cd /etc/apt/sources.list.d/
