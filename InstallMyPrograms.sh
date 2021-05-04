@@ -69,6 +69,10 @@ sudo apt install ./Incync_amd64.deb -y
 curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "https://prepros.io/downloads/stable/linux"
 sudo apt install ./Prepros_amd64.deb -y
 
+#node
+sudo apt install nodejs
+sudo apt install npm
+
 #Latex
 sudo apt install texlive-base -y 
 
