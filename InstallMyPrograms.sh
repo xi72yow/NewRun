@@ -51,7 +51,7 @@ sudo apt install ckb-next
 
 #Audio
 #Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
-sudo apt install alsa alsa-tools sox mplayer -y
+sudo apt install alsa alsa-tools sox mplayer kid3-y
 #ffmpeg Example: Audio: ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 320k output.mp3 Video: ffmpeg -i myvideo.mp4 -b:a 320k output.mp3
 sudo apt install ffmpeg -y
 #freac CD Ripper
