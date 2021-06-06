@@ -70,8 +70,11 @@ curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Prepros_amd64.deb -y
 
 #node
-sudo apt install nodejs
-sudo apt install npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install 14.4.0
+
+#sudo apt install nodejs
+#sudo apt install npm
 
 #Latex
 sudo apt install texlive-base -y 
