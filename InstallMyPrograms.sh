@@ -10,6 +10,7 @@ sudo apt upgrade
 
 #dependencies
 sudo apt install curl jq wget unzip sed git -y
+sudo apt install snapd -y
 
 #Steam
 curl --location --output Steam_amd64.deb --write-out "%{url_effective}\n" "https://repo.steampowered.com/steam/archive/stable/steam_latest.deb"
@@ -55,8 +56,6 @@ sudo apt install alsa alsa-tools sox mplayer kid3 -y
 #ffmpeg Example: Audio: ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 320k output.mp3 Video: ffmpeg -i myvideo.mp4 -b:a 320k output.mp3
 sudo apt install ffmpeg -y
 #freac CD Ripper
-sudo apt install libfdk-aac1 -y
-#sudo apt-get install libfdk-aac2 #ab20.10
 
 #Multimedia
 sudo apt install openshot-qt blender gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod -y
