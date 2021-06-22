@@ -12,6 +12,10 @@ sudo apt upgrade
 sudo apt install curl jq wget unzip sed git -y
 sudo apt install snapd -y
 
+#pimp nautilus with encryption
+sudo apt install seahorse-nautilus
+nautilus -q
+
 #Steam
 curl --location --output Steam_amd64.deb --write-out "%{url_effective}\n" "https://repo.steampowered.com/steam/archive/stable/steam_latest.deb"
 sudo apt install ./Steam_amd64.deb -y
