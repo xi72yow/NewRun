@@ -85,7 +85,7 @@ sudo apt install texlive-base -y
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
 #gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 gsettings set org.gnome.desktop.interface clock-format "24h"
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 
 #Keymapper
 download_URL=$(get_URL_from_latest_release_for_deb "sezanzeb/key-mapper")
