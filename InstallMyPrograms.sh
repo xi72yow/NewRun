@@ -63,8 +63,8 @@ sudo apt install ffmpeg -y
 #Multimedia
 sudo apt install octave openshot-qt blender gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod handbrake libfdk-aac1 -y
 
-#Insync Install Not sure that is in every case the newest Version
-curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.3.6.40933-focal_amd64.deb --output Incync_amd64.deb
+#Insync
+curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.6.1.50206-focal_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
 
 #Prepros
