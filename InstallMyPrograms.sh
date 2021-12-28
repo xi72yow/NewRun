@@ -16,6 +16,10 @@ sudo apt install snapd -y
 sudo apt install seahorse-nautilus
 nautilus -q
 
+#FlashPrint
+curl --location --output FlashPrint_amd64.deb --write-out "%{url_effective}\n" "https://en.fss.flashforge.com/10000/software/073e21bbe6ba5c7defb17dbb69708fd8.deb"
+sudo apt install ./FlashPrint_amd64.deb -y
+
 #Steam
 curl --location --output Steam_amd64.deb --write-out "%{url_effective}\n" "https://repo.steampowered.com/steam/archive/stable/steam_latest.deb"
 sudo apt install ./Steam_amd64.deb -y
