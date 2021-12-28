@@ -86,6 +86,7 @@ gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.
 #gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+cat dump_keybindings | dconf load /org/gnome/settings-daemon/plugins/media-keys/
 
 #Keymapper
 download_URL=$(get_URL_from_latest_release_for_deb "sezanzeb/key-mapper")
