@@ -13,7 +13,7 @@ sudo apt install curl jq wget unzip sed git -y
 sudo apt install snapd -y
 
 #pimp nautilus with encryption
-sudo apt install seahorse-nautilus
+sudo apt install seahorse-nautilus -y
 nautilus -q
 
 #FlashPrint
@@ -56,7 +56,7 @@ curl --location --output Discord_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Discord_amd64.deb -y
 
 #CKB-Next Keyboard/Mouse setup
-sudo apt install ckb-next
+sudo apt install ckb-next -y
 
 #Audio
 #Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
@@ -66,7 +66,7 @@ sudo apt install ffmpeg -y
 
 #Multimedia
 sudo apt install octave openshot-qt blender gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod handbrake libfdk-aac1 libdvd-pkg -y
-sudo dpkg-reconfigure libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg -y
 
 #Insync
 curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.6.1.50206-focal_amd64.deb --output Incync_amd64.deb
@@ -77,8 +77,8 @@ curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Prepros_amd64.deb -y
 
 #node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install --lts
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash -y
+nvm install --lts -y
 
 #Latex
 sudo apt install texlive-base -y 
