@@ -56,7 +56,7 @@ curl --location --output Discord_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Discord_amd64.deb -y
 
 #CKB-Next Keyboard/Mouse setup
-sudo apt install ckb-next -y
+sudo apt install ckb-next qjoypad -y #qjoypad --notray
 
 #Audio
 #Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
