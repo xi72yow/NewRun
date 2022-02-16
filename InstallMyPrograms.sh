@@ -81,7 +81,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
 nvm install --lts -y
 
 #Latex
-sudo apt install texlive-base -y 
+sudo apt install texlive-full -y 
 
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
