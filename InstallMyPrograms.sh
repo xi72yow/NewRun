@@ -65,7 +65,7 @@ sudo apt install alsa alsa-tools sox mplayer kid3 -y
 sudo apt install ffmpeg -y
 
 #Multimedia
-sudo apt install octave openshot-qt blender gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod handbrake libfdk-aac1 libdvd-pkg -y
+sudo apt install octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod handbrake libfdk-aac1 libdvd-pkg -y
 sudo dpkg-reconfigure libdvd-pkg -y
 
 #Insync
