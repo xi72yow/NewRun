@@ -1,5 +1,5 @@
 [/]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 
 [custom-keybindings/custom0]
 binding='<Super>Print'
@@ -10,3 +10,8 @@ name='FlameShot'
 binding='<Super>c'
 command='gpick'
 name='GPick'
+
+[custom-keybindings/custom2]
+binding='<Super>d'
+command='github gui'
+name='GitHub Desktop'
