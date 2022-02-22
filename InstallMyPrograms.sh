@@ -9,7 +9,7 @@ sudo apt update
 sudo apt upgrade
 
 #dependencies
-sudo apt install curl jq wget unzip sed git -y
+sudo apt install curl jq wget unzip sed git xdotool -y
 sudo apt install snapd -y
 
 #pimp nautilus with encryption
