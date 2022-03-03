@@ -47,11 +47,6 @@ download_URL=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
 curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $download_URL
 sudo apt install ./Github_Desktop_amd64.deb -y
 
-#xournalpp
-download_URL=$(get_URL_from_latest_release_for_deb "xournalpp/xournalpp")
-curl --location --output xournalpp_amd64.deb --write-out "%{url_effective}\n" $download_URL
-sudo apt install ./xournalpp_amd64.deb -y
-
 #Chrome
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output Chrome_amd64.deb
 sudo apt install ./Chrome_amd64.deb -y
@@ -90,7 +85,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
 nvm install --lts -y
 
 #Latex
-sudo apt install texlive-full inotify-tools qpdf -y 
+sudo apt install texlive-full inotify-tools qpdf xournal -y 
+
+#xournalpp currently not working for me
+#download_URL=$(get_URL_from_latest_release_for_deb "xournalpp/xournalpp")
+#curl --location --output xournalpp_amd64.deb --write-out "%{url_effective}\n" $download_URL
+#sudo apt install ./xournalpp_amd64.deb -y
 
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
