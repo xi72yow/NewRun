@@ -47,6 +47,11 @@ download_URL=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
 curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $download_URL
 sudo apt install ./Github_Desktop_amd64.deb -y
 
+#xournalpp
+download_URL=$(get_URL_from_latest_release_for_deb "xournalpp/xournalpp")
+curl --location --output xournalpp_amd64.deb --write-out "%{url_effective}\n" $download_URL
+sudo apt install ./xournalpp_amd64.deb -y
+
 #Chrome
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output Chrome_amd64.deb
 sudo apt install ./Chrome_amd64.deb -y
@@ -56,7 +61,11 @@ curl --location --output Discord_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Discord_amd64.deb -y
 
 #CKB-Next Keyboard/Mouse setup
-sudo apt install ckb-next qjoypad -y #qjoypad --notray
+sudo apt install ckb-next #qjoypad -y #qjoypad --notray #map mouse and keyboard to controller
+
+download_URL=$(get_URL_from_latest_release_for_deb "sezanzeb/input-remapper")
+curl --location --output remapper_amd64.deb --write-out "%{url_effective}\n" $download_URL
+sudo apt install ./remapper_amd64.deb -y
 
 #Audio
 #Audio Record Pipeline: sox -t alsa default test.wav --> mplayer test.wav
@@ -65,11 +74,11 @@ sudo apt install alsa alsa-tools sox mplayer kid3 -y
 sudo apt install ffmpeg -y
 
 #Multimedia
-sudo apt install octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot mumble birdfont filezilla obs-studio inkscape pdfmod handbrake libfdk-aac1 libdvd-pkg -y
+sudo apt install octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot birdfont filezilla obs-studio inkscape handbrake libfdk-aac1 libdvd-pkg -y
 sudo dpkg-reconfigure libdvd-pkg -y
 
 #Insync
-curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.6.1.50206-focal_amd64.deb --output Incync_amd64.deb
+curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-focal_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
 
 #Prepros
@@ -90,11 +99,6 @@ gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 #keybindings save dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > dump_keybindings
 cat dump_keybindings | dconf load /org/gnome/settings-daemon/plugins/media-keys/
-
-#Keymapper
-download_URL=$(get_URL_from_latest_release_for_deb "sezanzeb/key-mapper")
-curl --location --output key-mapper.deb --write-out "%{url_effective}\n" $download_URL
-sudo apt install ./key-mapper.deb -y
 
 #Display Config
 curl --location --output DisplayConfig.zip --write-out "%{url_effective}\n" "https://github.com/xi72yow/DisplayConfig/archive/refs/heads/main.zip"
