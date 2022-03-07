@@ -42,7 +42,10 @@ sudo apt install ./Steam_amd64.deb -y
 curl --location --output VS_Code_amd64.deb --write-out "%{url_effective}\n" "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 sudo apt install ./VS_Code_amd64.deb -y
 
-#Github Desktop "Not Official" 
+cp ./Code/snippets/javascript/log.code-snippets ~/.config/Code/User/snippets/log.code-snippets
+cp ./Code/shortcuts/keybindings.json ~/.config/Code/User/shortcuts/keybindings.json
+
+#Github Desktop "Not Official"
 download_URL=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
 curl --location --output Github_Desktop_amd64.deb --write-out "%{url_effective}\n" $download_URL
 sudo apt install ./Github_Desktop_amd64.deb -y
@@ -103,7 +106,7 @@ cat dump_keybindings | dconf load /org/gnome/settings-daemon/plugins/media-keys/
 #Display Config
 curl --location --output DisplayConfig.zip --write-out "%{url_effective}\n" "https://github.com/xi72yow/DisplayConfig/archive/refs/heads/main.zip"
 unzip -q DisplayConfig.zip -d ~/.local/share/gnome-shell/extensions/
-gnome-extensions enable "DisplayConfig";
+gnome-extensions enable "DisplayConfig"
 
 #restart Gnome Shell
-busctl --user call "org.gnome.Shell" "/org/gnome/Shell" "org.gnome.Shell" "Eval" "s" 'Meta.restart("Restarting…")';
+busctl --user call "org.gnome.Shell" "/org/gnome/Shell" "org.gnome.Shell" "Eval" "s" 'Meta.restart("Restarting…")'

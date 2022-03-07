@@ -1,0 +1,11 @@
+// Geben Sie Ihre Tastenzuordnungen in dieser Datei ein, um die Standardwerte außer Kraft zu setzen.auto[]
+[
+  {
+    "key": "alt+c",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "name": "console.log"
+    }
+  }
+]
