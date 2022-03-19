@@ -75,6 +75,10 @@ sudo apt install ffmpeg -y
 sudo apt install octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot birdfont filezilla obs-studio inkscape handbrake libfdk-aac1 libdvd-pkg -y
 sudo dpkg-reconfigure libdvd-pkg -y
 
+#Lightworks 
+curl https://cdn.lwks.com/releases/2022.1.1/lightworks_2022.1.1_r132926.deb --output lightworks_amd64.deb
+sudo apt install ./lightworks_amd64.deb -y
+
 #Insync
 curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-focal_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
@@ -90,10 +94,12 @@ nvm install --lts -y
 #Latex
 sudo apt install texlive-full inotify-tools qpdf xournal -y 
 
+#stuff
 #xournalpp currently not working for me
 #download_URL=$(get_URL_from_latest_release_for_deb "xournalpp/xournalpp")
 #curl --location --output xournalpp_amd64.deb --write-out "%{url_effective}\n" $download_URL
 #sudo apt install ./xournalpp_amd64.deb -y
+#sudo apt install clamav clamav-freshclam 
 
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
