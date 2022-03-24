@@ -20,3 +20,13 @@ name='GitHub Desktop'
 binding='<Super>u'
 command='xdotool getactivewindow windowsize 110% 110%'
 name='Ultimate Maximize'
+
+[custom-keybindings/custom4]
+binding='<Super>b'
+command='sensible-browser'
+name='Default Browser'
+
+[custom-keybindings/custom5]
+binding='<Super>f'
+command='nautilus'
+name='File Manager'
