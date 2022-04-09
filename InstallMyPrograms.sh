@@ -11,15 +11,30 @@ sudo apt upgrade
 #dependencies
 sudo apt install curl jq wget unzip sed git xdotool -y
 sudo apt install snapd -y
+sudo dpkg --add-architecture i386
 
 get_URL_from_latest_release_for_deb() {
     local resultURLs=$(curl "https://api.github.com/repos/$1/releases" | # Get release from GitHub api
-        jq '[.[].assets] | .[0]')                                        
+        jq '[.[].assets] | .[0]')
 
     for variable in $resultURLs; do
         if [[ $variable == *".deb"* ]]; then
             if [[ $variable == *"https:"* ]]; then # Get download URL
-                urlSize="$((${#variable} - 1))" 
+                urlSize="$((${#variable} - 1))"
+                echo $variable | cut -c2-$urlSize # Delete the ""
+            fi
+        fi
+    done
+}
+
+get_URL_from_latest_release_for_AppImage() {
+    local resultURLs=$(curl "https://api.github.com/repos/$1/releases" | # Get release from GitHub api
+        jq '[.[].assets] | .[0]')
+
+    for variable in $resultURLs; do
+        if [[ $variable == *".AppImage"* ]]; then
+            if [[ $variable == *"https:"* ]]; then # Get download URL
+                urlSize="$((${#variable} - 1))"
                 echo $variable | cut -c2-$urlSize # Delete the ""
             fi
         fi
@@ -42,8 +57,8 @@ sudo apt install ./Steam_amd64.deb -y
 curl --location --output VS_Code_amd64.deb --write-out "%{url_effective}\n" "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 sudo apt install ./VS_Code_amd64.deb -y
 
-cp ./Code/snippets/javascript/log.code-snippets ~/.config/Code/User/snippets/log.code-snippets
-cp ./Code/shortcuts/keybindings.json ~/.config/Code/User/shortcuts/keybindings.json
+#cp ./Code/snippets/javascript/log.code-snippets ~/.config/Code/User/snippets/log.code-snippets
+#cp ./Code/shortcuts/keybindings.json ~/.config/Code/User/shortcuts/keybindings.json
 
 #Github Desktop "Not Official"
 download_URL=$(get_URL_from_latest_release_for_deb "shiftkey/desktop")
@@ -72,10 +87,10 @@ sudo apt install alsa alsa-tools sox mplayer kid3 -y
 sudo apt install ffmpeg -y
 
 #Multimedia
-sudo apt install octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot birdfont filezilla obs-studio inkscape handbrake libfdk-aac1 libdvd-pkg -y
+sudo apt install gdebi libreoffice libreoffice-l10n-de libreoffice-help-de octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot birdfont filezilla obs-studio inkscape handbrake libfdk-aac1 libdvd-pkg -y
 sudo dpkg-reconfigure libdvd-pkg -y
 
-#Lightworks 
+#Lightworks
 curl https://cdn.lwks.com/releases/2022.1.1/lightworks_2022.1.1_r132926.deb --output lightworks_amd64.deb
 sudo apt install ./lightworks_amd64.deb -y
 
@@ -92,14 +107,25 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
 nvm install --lts -y
 
 #Latex
-sudo apt install texlive-full inotify-tools qpdf xournal -y 
+sudo apt install texlive-full inotify-tools qpdf xournal -y
+
+#Popslice
+download_URL=$(get_URL_from_latest_release_for_AppImage "pop-os/popsicle")
+curl --location --output popsicle_amd64.AppImage --write-out "%{url_effective}\n" $download_URL
+chmod a+x popsicle_amd64.AppImage
+cp ./apps/com.system76.Popsicle.desktop /usr/share/applications
+
+#ProtonVPN
+curl https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb --output ProtonVPN_amd64.deb
+sudo apt update
+sudo apt install protonvpn -y
 
 #stuff
 #xournalpp currently not working for me
 #download_URL=$(get_URL_from_latest_release_for_deb "xournalpp/xournalpp")
 #curl --location --output xournalpp_amd64.deb --write-out "%{url_effective}\n" $download_URL
 #sudo apt install ./xournalpp_amd64.deb -y
-#sudo apt install clamav clamav-freshclam 
+#sudo apt install clamav clamav-freshclam
 
 #Set Gnome 3 Optical Suff
 gsettings set org.gnome.desktop.background picture-uri "file://$PWD/XSmileWhite.png"
