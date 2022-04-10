@@ -1,9 +1,17 @@
 #!/bin/bash
 #chmod +x make script
 
+#ubuntu
 sudo add-apt-repository multiverse
 sudo add-apt-repository universe
 sudo add-apt-repository ppa:tatokis/ckb-next
+
+sudo apt update
+sudo apt upgrade
+
+#debian
+sudo cp ./files/sources.list /etc/apt/
+sudo sed -i 's/bullseye\/updates/bullseye-security/g' /etc/apt/sources.list
 
 sudo apt update
 sudo apt upgrade
