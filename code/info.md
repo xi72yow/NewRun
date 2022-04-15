@@ -11,15 +11,5 @@ https://raw.githubusercontent.com/pop-os/popsicle/master/gtk/assets/icons/512x51
 
 https://www.gnome-look.org/p/1334194/
 
-sudo nano /etc/apt/sources.list
- 
-deb http://deb.debian.org/debian bullseye main contrib non-free
-deb-src http://deb.debian.org/debian bullseye main contrib non-free
-deb http://deb.debian.org/debian-security bullseye/updates main contrib non-free
-deb-src http://deb.debian.org/debian-security bullseye/updates main contrib non-free
-deb http://deb.debian.org/debian bullseye-updates main contrib non-free
-deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free
- 
-sudo sed -i 's/bullseye\/updates/bullseye-security/g' /etc/apt/sources.list
- 
-sudo apt update 
+add appindicator
+adawita dark
