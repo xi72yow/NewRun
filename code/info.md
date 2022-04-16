@@ -1,7 +1,6 @@
 VSCode sync:
 https://code.visualstudio.com/docs/editor/settings-sync
 
-
 Change to Gnome Debian
 sudo apt install gdebi to install
 
@@ -13,3 +12,5 @@ https://www.gnome-look.org/p/1334194/
 
 add appindicator
 adawita dark
+
+when wyland use wlr-randr for brightness (xrandr)
