@@ -94,7 +94,7 @@ sudo apt install alsa alsa-tools sox mplayer kid3 -y
 #ffmpeg Example: Audio: ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 320k output.mp3 Video: ffmpeg -i myvideo.mp4 -b:a 320k output.mp3
 sudo apt install ffmpeg -y
 
-#Multimedia
+#Multimedia simplescreenrecorder when obs is buggy
 sudo apt install gdebi libreoffice libreoffice-l10n-de libreoffice-help-de octave openshot-qt blender g3dviewer gparted ktorrent lmms flameshot birdfont filezilla obs-studio inkscape handbrake libfdk-aac1 libdvd-pkg -y
 sudo dpkg-reconfigure libdvd-pkg -y
 
