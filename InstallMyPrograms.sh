@@ -111,8 +111,8 @@ curl --location --output Prepros_amd64.deb --write-out "%{url_effective}\n" "htt
 sudo apt install ./Prepros_amd64.deb -y
 
 #node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash -y
-nvm install --lts -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
+nvm install --lts 
 
 #Latex
 sudo apt install texlive-full inotify-tools qpdf xournal -y
