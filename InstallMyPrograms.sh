@@ -103,7 +103,7 @@ curl https://cdn.lwks.com/releases/2022.1.1/lightworks_2022.1.1_r132926.deb --ou
 sudo apt install ./lightworks_amd64.deb -y
 
 #Insync
-curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-focal_amd64.deb --output Incync_amd64.deb
+curl https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.9.50368-bullseye_amd64.deb --output Incync_amd64.deb
 sudo apt install ./Incync_amd64.deb -y
 
 #Prepros
@@ -142,6 +142,11 @@ gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 #keybindings save dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > dump_keybindings
 cat dump_keybindings | dconf load /org/gnome/settings-daemon/plugins/media-keys/
+
+#AppIndicator
+sudo apt install gnome-shell-extension-appindicator gir1.2-appindicator3-0.1
+#default displays manager
+grep '/usr/s\?bin' /etc/systemd/system/display-manager.service
 
 #Display Config
 curl --location --output DisplayConfig.zip --write-out "%{url_effective}\n" "https://github.com/xi72yow/DisplayConfig/archive/refs/heads/main.zip"
