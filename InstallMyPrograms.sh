@@ -125,7 +125,7 @@ cp ./apps/com.system76.Popsicle.desktop /usr/share/applications
 
 #ProtonVPN
 curl https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb --output ProtonVPN_amd64.deb
-sudo apt install ./VS_Code_amd64.deb -y
+sudo apt install ./ProtonVPN_amd64.deb -y
 sudo apt update
 sudo apt install protonvpn -y
 
